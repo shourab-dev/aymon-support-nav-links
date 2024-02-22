@@ -1,9 +1,9 @@
-let pathName = window.location.pathname;
-pathName = pathName.replace("/", "");
+let fullPath = window.location.pathname;
+let pathName = fullPath.split("/");
+let currentPage = pathName[pathName.length - 1];
 
 const activeLink =
-  document.querySelector(`a[href="${pathName}"]`) ??
+  document.querySelector(`a[href="${currentPage}"]`) ??
   document.querySelector(`a[href="index.html"]`);
 
-
-activeLink.classList.add('active')
+activeLink.classList.add("active");
